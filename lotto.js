@@ -1,0 +1,9 @@
+function lotto (a,b)
+{
+
+
+
+
+
+
+}
