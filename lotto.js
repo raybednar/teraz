@@ -1,9 +1,0 @@
-function lotto (a,b)
-{
-
-
-
-
-
-
-}
