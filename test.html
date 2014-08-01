@@ -1,0 +1,82 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+
+
+    <style type="text/css">
+        .row-highlight
+        {
+            background-color: Yellow;
+        }
+    </style>
+
+
+    <script type="text/javascript">
+        $(function() {
+            var message = $('#message');
+            var tr = $('#tbl').find('tr');
+            tr.bind('click', function(event) {
+                var values = '';
+                tr.removeClass('row-highlight');
+                var tds = $(this).addClass('row-highlight').find('td');
+                
+
+                $.each(tds, function(index, item) {
+                    values = values + 'td' + (index + 1) + ':' + item.innerHTML + '<br/>';
+                });
+                message.html(values);
+
+
+            });
+        });
+        
+
+    </script>
+
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <table id="tbl" style="border: solid 1px black">
+        <tr>
+            <td>
+                1
+            </td>
+            <td>
+                a
+            </td>
+			<td>
+                aa
+            </td>
+        </tr>
+        <tr>
+            <td>
+                2
+            </td>
+            <td>
+                b
+            </td>
+			<td>
+                bb
+            </td>
+        </tr>
+        <tr>
+            <td>
+                3
+            </td>
+            <td>
+                c
+            </td>
+			<td>
+                cc
+            </td>
+        </tr>
+    </table>
+    <br />
+    <div id="message">
+    </div>
+    </form>
+</body>
+</html>
